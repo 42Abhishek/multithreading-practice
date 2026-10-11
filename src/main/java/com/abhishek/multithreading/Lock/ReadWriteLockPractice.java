@@ -22,8 +22,8 @@ class SharedResource{
         }catch(Exception e){
 
         }finally {
-            lock.writeLock().unlock();
             System.out.println("Write lock released by : " + Thread.currentThread().getName());
+            lock.writeLock().unlock();
         }
     }
 
@@ -35,8 +35,8 @@ class SharedResource{
         }catch(Exception e){
 
         }finally {
-            lock.readLock().unlock();
             System.out.println("Read lock released by : " + Thread.currentThread().getName());
+            lock.readLock().unlock();
         }
     }
 }
